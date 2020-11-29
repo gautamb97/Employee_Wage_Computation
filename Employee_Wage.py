@@ -13,7 +13,13 @@ class EmployeeWage:
     def dailyWage(self):
         EMP_RATE_PER_HOUR = 20
         if EmployeeWage.employeeCheck == 1:
-            empHrs = 8
+            partTime = (random.randint(0,1))
+            if partTime == 0:
+                empHrs = 4
+                print("Employee is part time worker")
+            else:
+                empHrs = 8
+                print("Employee is full time worker")
         else:
             empHrs = 0
         empWage = empHrs * EMP_RATE_PER_HOUR
