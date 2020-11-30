@@ -11,6 +11,7 @@ class EmployeeWage:
     totalEmpHrs = 0
     workingDays = 0
     dailyWages = []
+    days = []
     def checkAttendance(self):
         if EmployeeWage.employeeCheck == 1:
             print("Employee is Present")
@@ -20,6 +21,8 @@ class EmployeeWage:
     def dailyWage(self):
         while (EmployeeWage.totalEmpHrs <= EmployeeWage.totalWorkHrs and EmployeeWage.workingDays < EmployeeWage.numOfWorkingDays):
             EmployeeWage.workingDays += 1
+            #EmployeeWage.days.append(EmployeeWage.workingDays)
+            #print(EmployeeWage.days)
             if EmployeeWage.employeeCheck == 1:
 
                     partTime = (random.randint(0,1))
@@ -32,8 +35,11 @@ class EmployeeWage:
                 empHrs = 0
             empWage = empHrs * EmployeeWage.EMP_RATE_PER_HOUR
             EmployeeWage.dailyWages.append(empWage)
+            EmployeeWage.days.append(EmployeeWage.workingDays)
+
             EmployeeWage.totalWage += empWage
         print(EmployeeWage.dailyWages)
+        print(EmployeeWage.days)
 
         print("Total wage is: ", EmployeeWage.totalWage)
 
