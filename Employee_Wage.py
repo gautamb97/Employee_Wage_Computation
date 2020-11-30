@@ -6,6 +6,10 @@ class EmployeeWage:
     employeeCheck = (random.randint(0, 1))
     EMP_RATE_PER_HOUR = 20
     totalWage = 0
+    totalWorkHrs = 100
+    numOfWorkingDays = 20
+    totalEmpHrs = 0
+    workingDays = 0
     def checkAttendance(self):
         if EmployeeWage.employeeCheck == 1:
             print("Employee is Present")
@@ -13,7 +17,8 @@ class EmployeeWage:
             print("Employee is Absent")
 
     def dailyWage(self):
-        for days in range(21):
+        while (EmployeeWage.totalEmpHrs <= EmployeeWage.totalWorkHrs and EmployeeWage.workingDays < EmployeeWage.numOfWorkingDays):
+            EmployeeWage.workingDays += 1
             if EmployeeWage.employeeCheck == 1:
 
                     partTime = (random.randint(0,1))
