@@ -10,6 +10,7 @@ class EmployeeWage:
     numOfWorkingDays = 20
     totalEmpHrs = 0
     workingDays = 0
+    dailyWages = []
     def checkAttendance(self):
         if EmployeeWage.employeeCheck == 1:
             print("Employee is Present")
@@ -30,12 +31,14 @@ class EmployeeWage:
             else:
                 empHrs = 0
             empWage = empHrs * EmployeeWage.EMP_RATE_PER_HOUR
+            EmployeeWage.dailyWages.append(empWage)
             EmployeeWage.totalWage += empWage
+        print(EmployeeWage.dailyWages)
 
         print("Total wage is: ", EmployeeWage.totalWage)
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
 
     Employee = EmployeeWage()
     (Employee.checkAttendance())
